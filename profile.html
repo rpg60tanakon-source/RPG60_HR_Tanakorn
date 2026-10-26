@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ทะเบียนประวัติบุคลากร — โรงเรียนราชประชานุเคราะห์ 60</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/d/1kmLhOEOXNpvqA-_kKV6v3kECEdULRdK4">
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #f5f7fb; font-family: system-ui, sans-serif; }
+    iframe { border: 0; width: 100%; height: 100%; display: block; }
+    #loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: #6b7280; }
+    #loading img { width: 64px; height: 64px; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <img src="https://lh3.googleusercontent.com/d/1kmLhOEOXNpvqA-_kKV6v3kECEdULRdK4" alt="">
+    <div>กำลังโหลดระบบ...</div>
+  </div>
+  <!-- เปลี่ยน URL นี้เมื่อ Deploy Apps Script เป็น deployment ใหม่ (ถ้าแก้ deployment เดิมเป็นเวอร์ชันใหม่ ไม่ต้องเปลี่ยน) -->
+  <iframe src="https://script.google.com/macros/s/AKfycby_xkcZe6izb4HI0g55rIvVYgz0dRKTVTPY5JuH9-t96ddHoqXB0ZLwk1jbLd__JaGh/exec?page=profile"
+          onload="document.getElementById('loading').remove()"></iframe>
+</body>
+</html>
