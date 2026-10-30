@@ -17,8 +17,13 @@
     <img src="https://lh3.googleusercontent.com/d/1kmLhOEOXNpvqA-_kKV6v3kECEdULRdK4" alt="">
     <div>กำลังโหลดระบบ...</div>
   </div>
-  <!-- เปลี่ยน URL นี้เมื่อ Deploy Apps Script เป็น deployment ใหม่ (ถ้าแก้ deployment เดิมเป็นเวอร์ชันใหม่ ไม่ต้องเปลี่ยน) -->
-  <iframe src="https://script.google.com/macros/s/AKfycbw3ScwTMu92m7Bft3UPFpEGYyQBbm1a3DwpcbDOFZo0IkSNGZpDcrfME0nJ4DSqJtgq/exec"
-          onload="document.getElementById('loading').remove()"></iframe>
+  <iframe id="app" onload="var l=document.getElementById('loading'); if(l) l.remove()"></iframe>
+  <script>
+    // เปลี่ยน URL นี้เมื่อ Deploy Apps Script เป็น deployment ใหม่ (ถ้าแก้ deployment เดิมเป็นเวอร์ชันใหม่ ไม่ต้องเปลี่ยน)
+    var GAS_URL = 'https://script.google.com/macros/s/AKfycbw3ScwTMu92m7Bft3UPFpEGYyQBbm1a3DwpcbDOFZo0IkSNGZpDcrfME0nJ4DSqJtgq/exec';
+    // ส่งต่อ ?page=submit / status / review ให้ Apps Script เพื่อให้ผู้ใช้อยู่บนโดเมน netlify ตลอด
+    var page = new URLSearchParams(location.search).get('page');
+    document.getElementById('app').src = GAS_URL + (page ? '?page=' + encodeURIComponent(page) : '');
+  </script>
 </body>
 </html>
